@@ -1,0 +1,40 @@
+.footerback{
+    background-color:black;
+    color:#fff
+}
+.list-unstyled>li{
+    padding-bottom: 0.7rem;
+}
+.list-unstyled>li>a{
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.list-unstyled>li>a:hover{
+    color:var(--secondary);
+}
+
+.list>li{
+    padding: 0rem;
+    font-size: 0.9rem;
+}
+.footer-head{
+    color: var(--secondary);
+}
+
+.footericon{
+    font-size: 28px;
+    border-radius: 10%;
+    padding: 5px;
+    background-color: #fff;
+}
+
+.footericon:hover{
+    color: var(--secondary);
+    
+}
+
+.link-reset{
+    text-decoration: none;
+    color: var(--secondary);
+}

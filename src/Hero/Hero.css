@@ -1,0 +1,23 @@
+.form-control{
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 8px;
+}
+
+label{
+ font-size: 15px;   
+}
+
+.form-select{
+    width:auto
+}
+
+.back-img{
+    background: url(../images/home.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    color: white;
+    padding-top: 5rem;
+    background-attachment: fixed;
+}
