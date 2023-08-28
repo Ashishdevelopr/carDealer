@@ -1,5 +1,7 @@
 import React from 'react'
 import "./Footer.css"
+import { HashLink } from 'react-router-hash-link'
+import { NavLink } from 'react-router-dom'
 const Footer = () => {
   return (
     <div className="footerback">
@@ -8,11 +10,11 @@ const Footer = () => {
       <div className="row">
         <div className="col-xl-3 col-lg-4 col-md-6">
           <div>
-            <h4 className="fw-bold footer-head">Cliffing Ventures</h4>
+          <HashLink class="navbar-brand fw-bold footer-head" to="/#navbar"> CarX <i class="fa-solid fa-car-side"></i> </HashLink>
             <p className="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex fuga omnis reiciendis cumque odio amet voluptates corporis mollitia ducimus. Odio..</p>
           </div>
           <ul className="list-unstyled d-flex">
-        <li className=" "><a className="link-dark" href="https://wa.me/919324280652" target="_blank"><i class="fa-brands fa-whatsapp footericon "></i></a></li>
+        <li className=" "><a className="link-dark" href="https://wa.me/918928903577" target="_blank"><i class="fa-brands fa-whatsapp footericon "></i></a></li>
         <li className="ms-3 "><a className="link-dark" href="https://www.instagram.com/businessbelieve/" target="_blank"><i class="fa-brands fa-instagram footericon"></i> </a></li>
         <li className="ms-3 "><a className="link-dark" href="https://www.instagram.com/businessbelieve/" target="_blank"> <i class="fa-brands fa-facebook-messenger footericon"></i></a></li>
       </ul>
@@ -22,16 +24,16 @@ const Footer = () => {
             <h5 className="fw-semibold footer-head">Company</h5>
             <ul className="list-unstyled">
               <li>
-                <a href="/" className="text-decoration-none">Home</a>
+                <HashLink to="/#navbar" className="text-decoration-none">Home</HashLink>
               </li>
               <li>
-                <a href="/#about" className="text-decoration-none">About Us</a>
+                <HashLink to="/#feature" className="text-decoration-none">Features</HashLink>
               </li>
               <li>
-                <a href="/" className="text-decoration-none">Course Map</a>
+                <HashLink to="/#category" className="text-decoration-none">Used Cars</HashLink>
               </li>
               <li>
-                <a href="./signup" className="text-decoration-none">Contact</a>
+                <HashLink to="/#category" className="text-decoration-none">New Cars</HashLink>
               </li>
             </ul>
           </div>
@@ -41,13 +43,13 @@ const Footer = () => {
           <h5 className="fw-semibold footer-head">Support</h5>
             <ul className="list-unstyled">
               <li>
-                <a href="/signin" className="text-decoration-none">Help & Support</a>
+                <HashLink to="/#navbar" className="text-decoration-none">Help & Support</HashLink>
               </li>
               <li>
-                <a href="/#FAQ" className="text-decoration-none">FAQ's</a>
+                <HashLink to="/#faq" className="text-decoration-none">FAQ's</HashLink>
               </li>
               <li>
-                <a href="/#about" className="text-decoration-none">Features</a>
+                <HashLink to="/#contact" className="text-decoration-none">Contact</HashLink>
               </li>
             </ul>
           </div>
@@ -60,12 +62,12 @@ const Footer = () => {
                 <p>Lokandwala Township, Kandivali east Mumbai 400101</p>
               </li>
               <li>
-                <p> Email: <a href="mailto:ashishdevelopr@gmail.com" className="link-reset">ashishdevelopr@gmail.com</a>
+                <p> Email: <a href="mailto:vikasyadav45901@gmail.com" className="link-reset">vikasyadav45901@gmail.com</a>
                 </p>
               </li>
               
               <li>
-                <p> Phone: <a href="tel:9324280652" className="link-reset">9324280652</a>
+                <p> Phone: <a href="tel:8928923577" className="link-reset">8928903577</a>
                 </p>
               </li>
               
@@ -76,7 +78,7 @@ const Footer = () => {
       
     </div>
     <div className="container">
-    <div className="d-flex justify-content-between pt-1 border-top border-warning border-opacity-50">
+    <div className="d-flex justify-content-between pt-1 border-top border-primary border-opacity-50">
       <p>&copy; 2023 Company, Inc. All rights reserved.</p>
     </div>
 

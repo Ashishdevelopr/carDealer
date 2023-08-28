@@ -3,7 +3,7 @@ import "./Faq.css"
 
 const Faq = () => {
   return (
-    <div id="question" className='reveal faq-background'>
+    <div id="faq" className='reveal faq-background'>
       <div className="px-4 py-5 text-center">
         <h1 className="faq-head mb-3">Frequently <span className=''> Asked Questions</span></h1>
         <div className="col-lg-6 mx-auto">

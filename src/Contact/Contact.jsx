@@ -1,6 +1,21 @@
-import React from 'react'
+import React, {useRef} from 'react'
+import emailjs from "@emailjs/browser"
 import "./Contact.css"
 const Contact = () => {
+    const form = useRef()
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs.sendForm('service_tiud935', 'template_ijv216o', form.current, 'nUyvZitPzpP2J643O')
+            .then((result) => {
+                alert("send successfully");
+            }, (error) => {
+                console.log(error.text);
+            });
+        e.target.reset()
+    };
+
   return (
     <div> <div id="contact">
     <div className='container mt-5 pt-4 '>
@@ -17,27 +32,29 @@ const Contact = () => {
         <div className="row flex-lg align-items-center g-5 py-0">
 
             <div className="col-md-6 col-sm-12 col-lg-6 mx-auto ">
+                <form ref={form} onSubmit={sendEmail}>
             <section className='form-section'>
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInput" placeholder="John Hunt" required />
+                        <input type="text" class="form-control" id="floatingInput" placeholder="John Hunt" required name="user_name" />
                         <label for="floatingInput">Full name</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required />
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required name="user_email" />
                         <label for="floatingInput">Email address</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingPassword" maxLength={10} placeholder="  " required />
+                        <input type="text" class="form-control" id="floatingPassword" maxLength={10} placeholder="+91 8905689758" name="user_phone" required />
                         <label for="floatingPassword">Phone number</label>
                     </div>
 
                     <div class="form-floating mb-3">
-                    <textarea class="form-control" id="validationTextarea floatingInput" row="4"required placeholder=" " style={{maxHeight:"200px"}}></textarea>
+                    <textarea class="form-control" id="validationTextarea floatingInput" row="4"required name="user_message" style={{maxHeight:"200px"}}></textarea>
                         <label for="floatingInput">Message</label>
                     </div>
 
                     <button class="btn btn-primary px-3 py-2 d-grid btn-lg col-12 mx-auto" type="submit">Submit form</button>
-                </section>                    
+                </section>  
+                </form>                  
                 </div>
 
 

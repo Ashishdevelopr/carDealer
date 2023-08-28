@@ -7,7 +7,7 @@ const Feature = () => {
         <>
 
 
-            <div class="lg-container px-5 pt-5 mx-auto">
+            <div class="lg-container px-5 pt-5 mx-auto" id="feature">
                 <div class="row mb-4">
                     <div class="col-md-10 mx-auto text-center">
                 <h2 class="fw-semibold fs-2">Why Choose Us ?</h2>

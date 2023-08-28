@@ -2,5 +2,26 @@
     font-size: 28px;
     font-weight: 700;
     color: var(--main-color) !important;
+}
 
+.nav-item{
+    font-weight: 500;
+}
+
+.navicon{
+    font-size: 23px;
+    color: rgb(43, 41, 41);
+    padding: 7.4px;
+    background-color: rgb(103, 224, 73);
+    border-radius: 4px;
+    font-weight: 600;
+
+}
+
+.navicon-phone{
+    font-size: 19px;
+    background-color: rgb(167, 206, 255);
+    padding: 9px;
+    border-radius: 4px;
+   
 }

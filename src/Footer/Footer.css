@@ -11,7 +11,7 @@
 }
 
 .list-unstyled>li>a:hover{
-    color:var(--secondary);
+    color:var(--main-color);
 }
 
 .list>li{
@@ -19,7 +19,7 @@
     font-size: 0.9rem;
 }
 .footer-head{
-    color: var(--secondary);
+    color: var(--main-color);
 }
 
 .footericon{
@@ -30,11 +30,11 @@
 }
 
 .footericon:hover{
-    color: var(--secondary);
+    color: var(--main-color);
     
 }
 
 .link-reset{
     text-decoration: none;
-    color: var(--secondary);
+    color: var(--main-color);
 }

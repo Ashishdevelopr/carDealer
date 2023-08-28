@@ -48,7 +48,7 @@ const CategoryNav = () => {
 
     return (
         <>
-            <div class="lg-container px-5  pt-5 mx-auto">
+            <div class="lg-container px-5  pt-5 mx-auto" id="category">
                 <div class="row mb-4">
                     <div class="col-md-12 mx-auto my-4 text-center">
                         <h2 class="fw-semibold fs-2 mb-3">Featured Listings</h2>
