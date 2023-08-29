@@ -1,192 +1,125 @@
-import React from 'react'
+import React,{useRef} from 'react'
 import "./Desc.css"
+import Navbar from '../Navbar/Navbar';
+import Mininav from './Mininav';
+import Footer from '../Footer/Footer';
 
 const Desc = () => {
-  return (
-    <div>
-        {/* Product start */}
-        <div class="container">
-    <div class="product-content product-wrap clearfix product-deatil">
-        <div class="row">
-            <div class="col-md-5 col-sm-12 col-xs-12">
-                <div class="product-image">
-                    <div id="myCarousel-2" class="carousel slide">
-                        <ol class="carousel-indicators">
-                            <li data-target="#myCarousel-2" data-slide-to="0" class=""></li>
-                            <li data-target="#myCarousel-2" data-slide-to="1" class="active"></li>
-                            <li data-target="#myCarousel-2" data-slide-to="2" class=""></li>
-                        </ol>
-                        <div class="carousel-inner">
-                            {/* <!-- Slide 1 --> */}
-                            <div class="item active">
-                                <img src="https://www.bootdey.com/image/700x400/FFB6C1/000000" class="img-responsive" alt="" />
-                            </div>
-                            {/* <!-- Slide 2 --> */}
-                            <div class="item">
-                                <img src="https://www.bootdey.com/image/700x400/87CEFA/000000" class="img-responsive" alt="" />
-                            </div>
-                            {/* <!-- Slide 3 --> */}
-                            <div class="item">
-                                <img src="https://www.bootdey.com/image/700x400/B0C4DE/000000" class="img-responsive" alt="" />
-                            </div>
-                        </div>
-                        <a class="left carousel-control" href="#myCarousel-2" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"></span> </a>
-                        <a class="right carousel-control" href="#myCarousel-2" data-slide="next"> <span class="glyphicon glyphicon-chevron-right"></span> </a>
-                    </div>
-                </div>
-            </div>
 
-            <div class="col-md-6 col-md-offset-1 col-sm-12 col-xs-12">
-                <h2 class="name">
-                    Product Name Title Here
-                    <small>Product by <a href="javascript:void(0);">Adeline</a></small>
-                    <i class="fa fa-star fa-2x text-primary"></i>
-                    <i class="fa fa-star fa-2x text-primary"></i>
-                    <i class="fa fa-star fa-2x text-primary"></i>
-                    <i class="fa fa-star fa-2x text-primary"></i>
-                    <i class="fa fa-star fa-2x text-muted"></i>
-                    <span class="fa fa-2x"><h5>(109) Votes</h5></span>
-                    <a href="javascript:void(0);">109 customer reviews</a>
-                </h2>
-                <hr />
-                <h3 class="price-container">
-                    $129.54
-                    <small>*includes tax</small>
-                </h3>
-                <div class="certified">
-                    <ul>
-                        <li>
-                            <a href="javascript:void(0);">Delivery time<span>7 Working Days</span></a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);">Certified<span>Quality Assured</span></a>
-                        </li>
-                    </ul>
-                </div>
-                <hr />
-                <div class="description description-tabs">
-                    <ul id="myTab" class="nav nav-pills">
-                        <li class="active"><a href="#more-information" data-toggle="tab" class="no-margin">Product Description </a></li>
-                        <li class=""><a href="#specifications" data-toggle="tab">Specifications</a></li>
-                        <li class=""><a href="#reviews" data-toggle="tab">Reviews</a></li>
-                    </ul>
-                    <div id="myTabContent" class="tab-content">
-                        <div class="tab-pane fade active in" id="more-information">
-                            <br />
-                            <strong>Description Title</strong>
-                            <p>
-                                Integer egestas, orci id condimentum eleifend, nibh nisi pulvinar eros, vitae ornare massa neque ut orci. Nam aliquet lectus sed odio eleifend, at iaculis dolor egestas. Nunc elementum pellentesque augue
-                                sodales porta. Etiam aliquet rutrum turpis, feugiat sodales ipsum consectetur nec.
-                            </p>
-                        </div>
-                        <div class="tab-pane fade" id="specifications">
-                            <br />
-                            <dl class="">
-                                <dt>Gravina</dt>
-                                <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
-                                <dd>Donec id elit non mi porta gravida at eget metus.</dd>
-                                <dd>Eget lacinia odio sem nec elit.</dd>
-                                <br />
 
-                                <dt>Test lists</dt>
-                                <dd>A description list is perfect for defining terms.</dd>
-                                <br />
+    const form = useRef()
 
-                                <dt>Altra porta</dt>
-                                <dd>Vestibulum id ligula porta felis euismod semper</dd>
-                            </dl>
-                        </div>
-                        <div class="tab-pane fade" id="reviews">
-                            <br />
-                            <form method="post" class="well padding-bottom-10" onsubmit="return false;">
-                                <textarea rows="2" class="form-control" placeholder="Write a review"></textarea>
-                                <div class="margin-top-10">
-                                    <button type="submit" class="btn btn-sm btn-primary pull-right">
-                                        Submit Review
-                                    </button>
-                                    <a href="javascript:void(0);" class="btn btn-link profile-link-btn" rel="tooltip" data-placement="bottom" title="" data-original-title="Add Location"><i class="fa fa-location-arrow"></i></a>
-                                    <a href="javascript:void(0);" class="btn btn-link profile-link-btn" rel="tooltip" data-placement="bottom" title="" data-original-title="Add Voice"><i class="fa fa-microphone"></i></a>
-                                    <a href="javascript:void(0);" class="btn btn-link profile-link-btn" rel="tooltip" data-placement="bottom" title="" data-original-title="Add Photo"><i class="fa fa-camera"></i></a>
-                                    <a href="javascript:void(0);" class="btn btn-link profile-link-btn" rel="tooltip" data-placement="bottom" title="" data-original-title="Add File"><i class="fa fa-file"></i></a>
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs.sendForm('service_tiud935', 'template_ijv216o', form.current, 'nUyvZitPzpP2J643O')
+            .then((result) => {
+                alert("send successfully");
+            }, (error) => {
+                console.log(error.text);
+            });
+        e.target.reset()
+    };
+
+
+    return (
+        <>
+           <Mininav/>
+            <div class="container col-xxl-8 px-3  py-5">
+                <div class="row flex-lg-row align-items-center g-5 ">
+
+                    <div class="col-12 col-sm-12 col-lg-6 ">
+                        <div id="carouselExampleFade" class="carousel slide carousel-fade ">
+                            <div class="carousel-inner rounded-5 shadow-lg ">
+                                <div class="carousel-item active">
+                                    <img src="https://creativelayers.net/themes/voiture-html/images/listing/lsp1-v1.jpg" class="d-block w-100" alt="..." />
                                 </div>
-                            </form>
-
-                            <div class="chat-body no-padding profile-message">
-                                <ul>
-                                    <li class="message">
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="online" />
-                                        <span class="message-text">
-                                            <a href="javascript:void(0);" class="username">
-                                                Alisha Molly
-                                                <span class="badge">Purchase Verified</span>
-                                                <span class="pull-right">
-                                                    <i class="fa fa-star fa-2x text-primary"></i>
-                                                    <i class="fa fa-star fa-2x text-primary"></i>
-                                                    <i class="fa fa-star fa-2x text-primary"></i>
-                                                    <i class="fa fa-star fa-2x text-primary"></i>
-                                                    <i class="fa fa-star fa-2x text-muted"></i>
-                                                </span>
-                                            </a>
-                                            Can't divide were divide fish forth fish to. Was can't form the, living life grass darkness very image let unto fowl isn't in blessed fill life yielding above all moved
-                                        </span>
-                                        <ul class="list-inline font-xs">
-                                            <li>
-                                                <a href="javascript:void(0);" class="text-info"><i class="fa fa-thumbs-up"></i> This was helpful (22)</a>
-                                            </li>
-                                            <li class="pull-right">
-                                                <small class="text-muted pull-right ultra-light"> Posted 1 year ago </small>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="message">
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="online" />
-                                        <span class="message-text">
-                                            <a href="javascript:void(0);" class="username">
-                                                Aragon Zarko
-                                                <span class="badge">Purchase Verified</span>
-                                                <span class="pull-right">
-                                                    <i class="fa fa-star fa-2x text-primary"></i>
-                                                    <i class="fa fa-star fa-2x text-primary"></i>
-                                                    <i class="fa fa-star fa-2x text-primary"></i>
-                                                    <i class="fa fa-star fa-2x text-primary"></i>
-                                                    <i class="fa fa-star fa-2x text-primary"></i>
-                                                </span>
-                                            </a>
-                                            Excellent product, love it!
-                                        </span>
-                                        <ul class="list-inline font-xs">
-                                            <li>
-                                                <a href="javascript:void(0);" class="text-info"><i class="fa fa-thumbs-up"></i> This was helpful (22)</a>
-                                            </li>
-                                            <li class="pull-right">
-                                                <small class="text-muted pull-right ultra-light"> Posted 1 year ago </small>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
+                                <div class="carousel-item">
+                                    <img src="https://creativelayers.net/themes/voiture-html/images/listing/lsp1-v3.jpg" class="d-block w-100" alt="..." />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://creativelayers.net/themes/voiture-html/images/listing/lsp1-v4.jpg" class="d-block w-100" alt="..." />
+                                </div>
                             </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
                         </div>
                     </div>
+
+                    <div class="col-lg-6">
+                        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">
+                            SMART GT AA-211
+                        </h1>
+                        <p class="fw-light text-uppercase ls-2">Sports Car</p>
+                        <p class="fw-normal">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+
+                        <div className=' d-flex '>
+                            <p className='me-auto rounded-4 p-2 bg-light fw-semibold'>Automatic</p>
+                            <p className='me-auto rounded-4 p-2 bg-light fw-semibold'>Electric</p>
+                            <p className='me-auto rounded-4 p-2 bg-light fw-semibold'>2 Person</p>
+                        </div>
+
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                            <button type="button" class="btn btn-primary btn-md px-3 py-2 me-md-2">$2,000</button>
+                            <button type="button" class="btn btn-outline-secondary btn-md py-2 px-3">
+                            <a href="tel:8928903577" className="link-dark text-decoration-none">Contact Us</a>
+
+                                </button>
+                        </div>
+                    </div>
+
                 </div>
-                <hr />
-                <div class="row">
-                    <div class="col-sm-12 col-md-6 col-lg-6">
-                        <a href="javascript:void(0);" class="btn btn-success btn-lg">Add to cart ($129.54)</a>
+
+                <div class="row py-5">
+                    <div class="col-md-8 col-sm-12">
+                        <h6 class=" fw-normal fs-5">Description</h6>
+                        <p class="fs-6 lh-2">
+                            The all-new Volvo XC60 is a terrific luxury compact SUV. It's been fully redesigned for 2017 and features improvements across the board. These changes bump the vehicle from its previous midpack standing; it now resides with some of the best in the class. Some of the most notable improvements include a state-of-the-art infotainment system, more legroom for rear-seat riders, and peppy engine choices.<br></br><br></br>
+                            
+                            Occupying over 8,000 square feet, perched over 1,100 feet in the air with absolutely breathtaking panoramic 360-degree views of all of New York City and the surrounding tri-state area, The 82nd Floor at 432 Park Avenue has been completely reimagined by one of the most sought-after design houses in London and represents an utterly unique opportunity to own a globally significant property.<br></br><br></br>
+
+                            The Amrutha Lounge means port in the Turkish language, however the restaurant opens its doors to all aspects of the Mediterranean kitchen. The kitchen will be mostly focused on Mediterranean food; the owners of the restaurant are young professional chefs who can bring new, exciting tastes to Angel, Islington which will show through in the quality of food they prepare.ent.</p>
                     </div>
-                    <div class="col-sm-12 col-md-6 col-lg-6">
-                        <div class="btn-group pull-right">
-                            <button class="btn btn-white btn-default"><i class="fa fa-star"></i> Add to wishlist</button>
-                            <button class="btn btn-white btn-default"><i class="fa fa-envelope"></i> Contact Seller</button>
-                        </div>
+                    <div class="col-md-4 col-sm-12">
+                    <h2 class=" fw-semibold fs-2">Contact Us</h2>
+  
+                <form ref={form} onSubmit={sendEmail}>
+            <section className='form-section'>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="John Hunt" required name="user_name" />
+                        <label for="floatingInput">Full name</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required name="user_email" />
+                        <label for="floatingInput">Email address</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingPassword" maxLength={10} placeholder="+91 8905689758" name="user_phone" required />
+                        <label for="floatingPassword">Phone number</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                    <textarea class="form-control" id="validationTextarea floatingInput" row="4"required name="user_message" style={{maxHeight:"200px"}}></textarea>
+                        <label for="floatingInput">Message</label>
+                    </div>
+
+                    <button class="btn btn-primary px-3 py-2 d-grid btn-lg col-12 mx-auto" type="submit">Submit form</button>
+                </section>  
+                </form>                  
+             
+
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    {/* <!-- end product --> */}
-</div>
-    </div>
-  )
+            <Footer/>
+        </>
+    )
 }
 
 export default Desc

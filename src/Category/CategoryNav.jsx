@@ -1,6 +1,7 @@
-import { useState } from "react"
+import { useState,useEffect } from "react"
 import React from 'react'
 import "./Category.css"
+import { useNavigate,useLocation} from "react-router-dom"
 const CategoryNav = () => {
     const [activeCategory, setActiveCategory] = useState('old')
 
@@ -46,6 +47,14 @@ const CategoryNav = () => {
         },
     ];
 
+const navigate = useNavigate()
+const {pathname} = useLocation()
+
+useEffect(()=>{
+  window.scrollTo(0,0)
+
+}, [pathname])
+
     return (
         <>
             <div class="lg-container px-5  pt-5 mx-auto" id="category">
@@ -79,7 +88,9 @@ const CategoryNav = () => {
       .filter(category => category.type === activeCategory)
       .map(category =>
         category.vehicles.map(vehicle => (
-          <div className="col" key={vehicle.model}>
+          <div className="col" key={vehicle.model}  onClick={()=>{
+            navigate("/car-desc")
+          }}>
             <div className="card">
               <img
                 src={vehicle.img}

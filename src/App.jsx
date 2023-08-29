@@ -18,21 +18,24 @@ function App() {
   return (
     <>
       <Routes>
+        
         <Route path='/'element={
         <>
+         
           <Navbar />
-          {/* <Hero />
+          <Hero />
           <Feature />
           <CategoryNav />
           <Contact />
           <Faq />
-          <Footer /> */}
-          <Desc/>
+          <Footer />
+         
         </>
       }>
         </Route>
 
-        <Route path='/feature' element={<Feature/>}></Route>
+        <Route path='/*' element={<Feature/>}></Route>
+        <Route path='/car-desc' element={<Desc/>}></Route>
       </Routes>
 
     </>
